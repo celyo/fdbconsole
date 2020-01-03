@@ -1,0 +1,2 @@
+# fdbconsole
+Firebird DB Console
