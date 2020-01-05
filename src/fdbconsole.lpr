@@ -7,7 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, MainFM, Settings, LogUtils, Globals
+  Forms, MainFM, Settings, LogUtils, Globals, ConnectionInfo, MainDM,
+  ConnectionsFM, ConnectionsView, BaseView, BaseEditor, SQLEditorFM, SQLEditor
   { you can add units after this };
 
 {$R *.res}
@@ -18,6 +19,9 @@ begin
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TMainDataModule, MainDataModule);
+  Application.CreateForm(TConnectionsForm, ConnectionsForm);
+  Application.CreateForm(TSQLEditorForm, SQLEditorForm);
   Application.Run;
 end.
 

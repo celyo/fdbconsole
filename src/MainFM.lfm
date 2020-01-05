@@ -60,5 +60,23 @@ object MainForm: TMainForm
   object MainMenu: TMainMenu
     left = 67
     top = 32
+    object miDatabase: TMenuItem
+      Caption = '&Database'
+    end
+    object miEdit: TMenuItem
+      Caption = '&Edit'
+    end
+    object miView: TMenuItem
+      Caption = '&View'
+    end
+    object miTools: TMenuItem
+      Caption = '&Tools'
+    end
+    object miHelp: TMenuItem
+      Caption = '&Help'
+      object miAbout: TMenuItem
+        Caption = '&About'
+      end
+    end
   end
 end

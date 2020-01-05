@@ -1,0 +1,90 @@
+object ConnectionsForm: TConnectionsForm
+  Left = 342
+  Height = 458
+  Top = 250
+  Width = 245
+  BorderStyle = bsNone
+  Caption = 'ConnectionsForm'
+  ClientHeight = 458
+  ClientWidth = 245
+  object tvConnections: TTreeView
+    Left = 0
+    Height = 458
+    Top = 0
+    Width = 245
+    Align = alClient
+    Images = MainDataModule.ImageList16
+    PopupMenu = pmConnections
+    RowSelect = True
+    TabOrder = 0
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+  end
+  object pmConnections: TPopupMenu
+    Images = MainDataModule.ImageList16
+    left = 104
+    top = 294
+    object miDBRegistrationInfo: TMenuItem
+      Caption = 'Database Registration Info ...'
+    end
+    object miRegisterDB: TMenuItem
+      Caption = 'Register Database ...'
+    end
+    object miUnregisterDB: TMenuItem
+      Caption = 'Unregister Database'
+    end
+    object N1: TMenuItem
+      Caption = '-'
+    end
+    object miConnect: TMenuItem
+      Caption = 'Connect'
+    end
+    object miDisconnect: TMenuItem
+      Caption = 'Disconnect'
+    end
+    object N2: TMenuItem
+      Caption = '-'
+    end
+    object miCreateDB: TMenuItem
+      Caption = 'Create Database ...'
+    end
+    object miDropDB: TMenuItem
+      Caption = 'Drop Database'
+    end
+    object miBackupDB: TMenuItem
+      Caption = 'Backup Database ...'
+    end
+    object miRestoreDB: TMenuItem
+      Caption = 'Restore Database ...'
+    end
+    object MenuItem9: TMenuItem
+      Caption = '-'
+    end
+    object miNewDomain: TMenuItem
+      Caption = 'New Domain ...'
+    end
+    object miNewTable: TMenuItem
+      Caption = 'New Table ...'
+    end
+    object miNewView: TMenuItem
+      Caption = 'New View ...'
+    end
+    object miNewProcedure: TMenuItem
+      Caption = 'New Procedure ...'
+    end
+    object miNewTrigger: TMenuItem
+      Caption = 'New Trigger ...'
+    end
+    object miNewGenerator: TMenuItem
+      Caption = 'New Generator ...'
+    end
+    object miNewException: TMenuItem
+      Caption = 'New Exception ...'
+    end
+    object miNewUDF: TMenuItem
+      Caption = 'New UDF ...'
+    end
+    object miNewRole: TMenuItem
+      Caption = 'New Role ...'
+    end
+  end
+end
