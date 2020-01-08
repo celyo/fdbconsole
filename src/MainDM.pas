@@ -12,8 +12,7 @@ type
   { TMainDataModule }
 
   TMainDataModule = class(TDataModule)
-    ImageList32: TImageList;
-    ImageList16: TImageList;
+    ImageList: TImageList;
   private
 
   public

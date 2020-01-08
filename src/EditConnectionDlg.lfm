@@ -1,0 +1,262 @@
+inherited EditConnectionDialog: TEditConnectionDialog
+  Left = 342
+  Height = 225
+  Top = 250
+  Width = 434
+  Caption = 'EditConnectionDialog'
+  ClientHeight = 225
+  ClientWidth = 434
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  inherited pnlMain: TPanel
+    Height = 182
+    Width = 434
+    ClientHeight = 182
+    ClientWidth = 434
+    object Label1: TLabel[0]
+      Left = 10
+      Height = 17
+      Top = 12
+      Width = 106
+      Caption = 'Connection Name: '
+      ParentColor = False
+    end
+    object edConnName: TEdit[1]
+      Left = 120
+      Height = 27
+      Top = 8
+      Width = 301
+      Anchors = [akTop, akLeft, akRight]
+      TabOrder = 0
+      Text = 'edConnName'
+    end
+    object Label2: TLabel[2]
+      Left = 123
+      Height = 17
+      Top = 49
+      Width = 80
+      Caption = 'Server Name: '
+      ParentColor = False
+    end
+    object edServerName: TEdit[3]
+      Left = 208
+      Height = 27
+      Top = 44
+      Width = 213
+      Anchors = [akTop, akLeft, akRight]
+      TabOrder = 2
+      Text = 'edServerName'
+    end
+    object CkbRemoteServer: TCheckBox[4]
+      Left = 8
+      Height = 21
+      Top = 47
+      Width = 66
+      Caption = 'Remote'
+      TabOrder = 1
+    end
+    object Label3: TLabel[5]
+      Left = 10
+      Height = 17
+      Top = 85
+      Width = 60
+      Caption = 'Database: '
+      ParentColor = False
+    end
+    object edDBName: TFileNameEdit[6]
+      Left = 85
+      Height = 27
+      Top = 80
+      Width = 336
+      FileName = 'edDBName'
+      FilterIndex = 0
+      HideDirectories = False
+      ButtonWidth = 24
+      NumGlyphs = 1
+      Anchors = [akTop, akLeft, akRight]
+      MaxLength = 0
+      Spacing = 1
+      TabOrder = 3
+      Text = 'edDBName'
+    end
+    object Label4: TLabel[7]
+      Left = 10
+      Height = 17
+      Top = 120
+      Width = 70
+      Caption = 'User Name: '
+      ParentColor = False
+    end
+    object edUserName: TEdit[8]
+      Left = 85
+      Height = 27
+      Top = 116
+      Width = 130
+      TabOrder = 4
+      Text = 'edUserName'
+    end
+    object Label5: TLabel[9]
+      Left = 222
+      Height = 17
+      Top = 120
+      Width = 60
+      Caption = 'Password: '
+      ParentColor = False
+    end
+    object edPassword: TEdit[10]
+      Left = 291
+      Height = 27
+      Top = 116
+      Width = 130
+      TabOrder = 5
+      Text = 'edPassword'
+    end
+    object Label6: TLabel[11]
+      Left = 10
+      Height = 17
+      Top = 154
+      Width = 30
+      Caption = 'Role: '
+      ParentColor = False
+    end
+    object edRole: TEdit[12]
+      Left = 85
+      Height = 27
+      Top = 150
+      Width = 130
+      TabOrder = 6
+      Text = 'edRole'
+    end
+    object Label7: TLabel[13]
+      Left = 222
+      Height = 17
+      Top = 154
+      Width = 51
+      Caption = 'CharSet: '
+      ParentColor = False
+    end
+    object cbCharSet: TComboBox[14]
+      Left = 291
+      Height = 25
+      Top = 150
+      Width = 130
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        'NONE'
+        'OCTETS'
+        'ASCII'
+        'UNICODE_FSS'
+        'UTF8'
+        'SJIS_0208'
+        'EUCJ_0208'
+        'DOS437'
+        'DOS850'
+        'DOS865'
+        'ISO8859_1'
+        'ISO8859_2'
+        'ISO8859_3'
+        'ISO8859_4'
+        'ISO8859_5'
+        'ISO8859_6'
+        'ISO8859_7'
+        'ISO8859_8'
+        'ISO8859_9'
+        'ISO8859_13'
+        'DOS852'
+        'DOS857'
+        'DOS860'
+        'DOS861'
+        'DOS863'
+        'CYRL'
+        'DOS737'
+        'DOS775'
+        'DOS858'
+        'DOS862'
+        'DOS864'
+        'DOS866'
+        'DOS869'
+        'WIN1250'
+        'WIN1251'
+        'WIN1252'
+        'WIN1253'
+        'WIN1254'
+        'NEXT'
+        'WIN1255'
+        'WIN1256'
+        'WIN1257'
+        'KSC_5601'
+        'BIG_5'
+        'GB_2312'
+        'KOI8R'
+        'KOI8U'
+        'WIN1258'
+        'TIS620'
+        'GBK'
+        'CP943C'
+        'GB18030'
+      )
+      Style = csDropDownList
+      TabOrder = 7
+      Text = 'NONE'
+    end
+  end
+  inherited pnlButtons: TPanel
+    Top = 182
+    Width = 434
+    ClientWidth = 434
+    inherited btnOK: TBitBtn
+      Left = 261
+      TabOrder = 1
+    end
+    inherited btnCancel: TBitBtn
+      Left = 346
+      TabOrder = 2
+    end
+    object btnTest: TBitBtn[2]
+      Left = 10
+      Height = 25
+      Top = 10
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Test'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF000000
+        0024000000330000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000FFFFFF00FFFFFF00B9B7
+        B6C3707273FF0000003300000033000000330000003300000033000000000000
+        00000000000000000000000000000000000000000000FFFFFF00FFFFFF009FA0
+        A2FFCCCCCEFF6B737DFFBB833FFFB78243FFB68344FFB88445FF000000330000
+        00000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+        00009CA4AEFFB97E37FFF9C173FFF2BA6DFFEFB665FFE5B56DFFB78344FF0000
+        00330000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+        0000B9803AFFF4C98FFFF6C078FFF2BB70FFEBBF81FFB17D3FFFEFB35DFFB884
+        44FF0000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+        0000B6803EFFF8D19EFFF8C27DFFF2CB94FFAE7A3BFFF4BA6BFFDDAC64DDB882
+        40FF0000003300000033000000000000000000000000FFFFFF00FFFFFF000000
+        0000B5803FFFFFDCAFFFFBD7A7FFAD7837FFF9C27BFFE5BA7BDEB57F3EFFB9C5
+        D8FFB8813FFFB88444FF000000330000000000000000FFFFFF00FFFFFF000000
+        0000B68140FFFFEBC5FFAD7735FFFFCB88FFEEC792DEB57F3FFF00000033B57F
+        3CFFE9C591FFEDAF56FFB78445FF0000003300000000FFFFFF00FFFFFF000000
+        000000000000B57F3EFFFFDA9FFFF5D5A7DDB47D39FF00000033B57F3FFFE9BF
+        84DEF1B766FFB27E3FFFE1AC5FFFB88445FF00000000FFFFFF00FFFFFF000000
+        00000000000000000000B78241FFB67F3CFFB8C4D5FFB57E3AFFECC28ADEF9C1
+        79FFAF7A3BFFE6B975FFE6B570FFB78343FF00000000FFFFFF00FFFFFF000000
+        000000000000000000000000000000000000B7803DFFEFCB9FFFFFCD8CFFAD78
+        37FFEEC68BFFF0B76AFFECC081FFB78241FF00000000FFFFFF00FFFFFF000000
+        000000000000000000000000000000000000B78241FFFFDCA2FFAE7735FFFAD4
+        A3FFF6C079FFF4BB70FFF7CD93FFBC833EFF00000000FFFFFF00FFFFFF000000
+        00000000000000000000000000000000000000000000B57F3EFFFFEAC3FFFFE1
+        B8FFFFDDB0FFFFDBABFFB97E35FF6B737DFF00000033FFFFFF00FFFFFF000000
+        0000000000000000000000000000000000000000000000000000B68140FFB57F
+        3EFFB57F3DFFB87F39FF9CA4ADFFCCCCCEFF707173FFFFFFFF00FFFFFF000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000009FA0A2FFC9C7C6B4FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      TabOrder = 0
+    end
+  end
+end

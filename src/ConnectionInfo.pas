@@ -22,7 +22,11 @@ type
     FPort: Integer;
     FRole: String;
     FUser: String;
+  protected
+    procedure AssignTo(Dest: TPersistent); override;
   public
+    procedure Clear;
+
     property Name: String read FName write FName;
     property Host: String read FHost write FHost;
     property Port: Integer read FPort write FPort;
@@ -35,6 +39,37 @@ type
   end;
 
 implementation
+
+{ TConnectionInfo }
+
+procedure TConnectionInfo.AssignTo(Dest: TPersistent);
+begin
+  if Dest <> nil then
+  begin
+    Dest.Name := Name;
+    Dest.Host := Host;
+    Dest.Port := Port;
+    Dest.Database := Database;
+    Dest.Dialect := Dialect;
+    Dest.CharSet := CharSet;
+    Dest.Role := Role;
+    Dest.User := User;
+    Dest.Password := Password;
+  end;
+end;
+
+procedure TConnectionInfo.Clear;
+begin
+  Name := '';
+  Host := '';
+  Port := 0;
+  Database := '';
+  Dialect := 0;
+  CharSet := '';
+  Role := '';
+  User := '';
+  Password := '';
+end;
 
 end.
 

@@ -24,15 +24,7 @@ object MainForm: TMainForm
     BevelOuter = bvNone
     TabOrder = 1
   end
-  object ToolBar: TToolBar
-    Left = 0
-    Height = 26
-    Top = 0
-    Width = 723
-    Caption = 'ToolBar'
-    TabOrder = 2
-  end
-  object Splitter1: TSplitter
+  object Splitter: TSplitter
     Left = 192
     Height = 402
     Top = 26
@@ -47,7 +39,7 @@ object MainForm: TMainForm
     BevelOuter = bvNone
     ClientHeight = 402
     ClientWidth = 526
-    TabOrder = 4
+    TabOrder = 3
     object PageControl: TPageControl
       Left = 0
       Height = 402
@@ -57,7 +49,49 @@ object MainForm: TMainForm
       TabOrder = 0
     end
   end
+  object TopPanel: TPanel
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 723
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 26
+    ClientWidth = 723
+    TabOrder = 0
+    object MainToolBar: TToolBar
+      Left = 0
+      Height = 26
+      Top = 0
+      Width = 699
+      Align = alClient
+      Caption = 'MainToolBar'
+      Images = MainDataModule.ImageList
+      TabOrder = 0
+    end
+    object TabToolBar: TToolBar
+      Left = 699
+      Height = 26
+      Top = 0
+      Width = 24
+      Align = alRight
+      AutoSize = True
+      Caption = 'TabToolBar'
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ShowCaptions = True
+      TabOrder = 1
+      object tbbCloseTab: TToolButton
+        Left = 1
+        Top = 2
+        Caption = 'x'
+      end
+    end
+  end
   object MainMenu: TMainMenu
+    Images = MainDataModule.ImageList
     left = 67
     top = 32
     object miDatabase: TMenuItem

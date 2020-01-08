@@ -7,20 +7,21 @@ object ConnectionsForm: TConnectionsForm
   Caption = 'ConnectionsForm'
   ClientHeight = 458
   ClientWidth = 245
+  LCLVersion = '2.0.6.0'
   object tvConnections: TTreeView
     Left = 0
     Height = 458
     Top = 0
     Width = 245
     Align = alClient
-    Images = MainDataModule.ImageList16
+    Images = MainDataModule.ImageList
     PopupMenu = pmConnections
     RowSelect = True
     TabOrder = 0
     Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
   end
   object pmConnections: TPopupMenu
-    Images = MainDataModule.ImageList16
+    Images = MainDataModule.ImageList
     left = 104
     top = 294
     object miDBRegistrationInfo: TMenuItem

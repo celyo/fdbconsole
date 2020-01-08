@@ -23,9 +23,12 @@ type
     miEdit: TMenuItem;
     miDatabase: TMenuItem;
     PageControl: TPageControl;
-    Splitter1: TSplitter;
+    MainToolBar: TToolBar;
+    tbbCloseTab: TToolButton;
+    TabToolBar: TToolBar;
+    TopPanel: TPanel;
+    Splitter: TSplitter;
     StatusBar: TStatusBar;
-    ToolBar: TToolBar;
     procedure FormCreate(Sender: TObject);
   private
     FConnectionsView: IConnectionsView;
