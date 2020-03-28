@@ -9,7 +9,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, MainFM, Settings, LogUtils, Globals, ConnectionInfo, MainDM,
   ConnectionsFM, ConnectionsView, BaseView, BaseEditor, SQLEditorFM, SQLEditor,
-  EditConnectionDlg
+  EditConnectionDlg, DBUtils
   { you can add units after this };
 
 {$R *.res}

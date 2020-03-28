@@ -43,18 +43,22 @@ implementation
 { TConnectionInfo }
 
 procedure TConnectionInfo.AssignTo(Dest: TPersistent);
+var
+  aDestConnInfo : TConnectionInfo;
 begin
-  if Dest <> nil then
+  if (Dest <> nil) and (Dest is TConnectionInfo) then
   begin
-    Dest.Name := Name;
-    Dest.Host := Host;
-    Dest.Port := Port;
-    Dest.Database := Database;
-    Dest.Dialect := Dialect;
-    Dest.CharSet := CharSet;
-    Dest.Role := Role;
-    Dest.User := User;
-    Dest.Password := Password;
+    aDestConnInfo := Dest as TConnectionInfo;
+
+    aDestConnInfo.Name := Name;
+    aDestConnInfo.Host := Host;
+    aDestConnInfo.Port := Port;
+    aDestConnInfo.Database := Database;
+    aDestConnInfo.Dialect := Dialect;
+    aDestConnInfo.CharSet := CharSet;
+    aDestConnInfo.Role := Role;
+    aDestConnInfo.User := User;
+    aDestConnInfo.Password := Password;
   end;
 end;
 

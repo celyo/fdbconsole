@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ComCtrls,
-  ExtCtrls, BaseEditor, ConnectionsView;
+  ExtCtrls, BaseEditor, ConnectionsView, DBUtils;
 
 type
 
@@ -30,13 +30,15 @@ type
     Splitter: TSplitter;
     StatusBar: TStatusBar;
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     FConnectionsView: IConnectionsView;
+    FConnetions: TConnectionHolderList;
 
     function ActiveEditor: IBaseEditor;
     procedure HandleException(Sender: TObject; E: Exception);
     procedure SetFormCaption;
-
+    procedure LoadConnections;
   public
 
   end;
@@ -49,21 +51,32 @@ implementation
 {$R *.lfm}
 
 uses
-  Globals, LogUtils, ConnectionsFM, SQLEditorFM;
+  Globals, LogUtils, ConnectionsFM, SQLEditorFM, ConnectionInfo;
 
 { TMainForm }
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
+  FConnetions := TConnectionHolderList.Create(true);
+
   Application.AddOnExceptionHandler(@HandleException);
 
   LogUtils.SetLogMode(LogUtils.StrToLogMode(gSettings.LogMode));
 
   SetFormCaption;
 
-  FConnectionsView := CreateConnectionsView(LeftPanel);
+  LoadConnections;
+
+  FConnectionsView := CreateConnectionsView(LeftPanel, FConnetions);
+  FConnectionsView.Reload;
+
 
   CreateSQLEditor(PageControl.AddTabSheet, nil);
+end;
+
+procedure TMainForm.FormDestroy(Sender: TObject);
+begin
+  FConnetions.Free;
 end;
 
 function TMainForm.ActiveEditor: IBaseEditor;
@@ -95,6 +108,43 @@ begin
   aStrVersion := AppVersion;
 
   Caption:= Format('%s (%s)',[Application.Title, aStrVersion]);
+end;
+
+procedure TMainForm.LoadConnections;
+var
+  aConnInfo: TConnectionInfo;
+begin
+  FConnetions.Clear;
+
+  //DUMMY
+  aConnInfo := TConnectionInfo.Create();
+  aConnInfo.Name := 'Connection A';
+  aConnInfo.Host := 'localhost';
+  aConnInfo.Port := 3050;
+  aConnInfo.Database := 'dba.fdb';
+  aConnInfo.Dialect := 3;
+  aConnInfo.CharSet := 'NONE';
+  aConnInfo.Role := '';
+  aConnInfo.User := 'user a';
+  aConnInfo.Password := 'password a';
+
+  FConnetions.Add(TConnectionHolder.Create(aConnInfo));
+
+  aConnInfo := TConnectionInfo.Create();
+  aConnInfo.Name := 'Connection B';
+  aConnInfo.Host := 'foreignhost';
+  aConnInfo.Port := 3151;
+  aConnInfo.Database := 'dbb.fdb';
+  aConnInfo.Dialect := 3;
+  aConnInfo.CharSet := 'NONE';
+  aConnInfo.Role := '';
+  aConnInfo.User := 'user b';
+  aConnInfo.Password := 'password b';
+
+  FConnetions.Add(TConnectionHolder.Create(aConnInfo));
+
+
+  //TODO
 end;
 
 

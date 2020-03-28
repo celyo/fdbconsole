@@ -8,6 +8,7 @@ inherited EditConnectionDialog: TEditConnectionDialog
   ClientWidth = 434
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  OnShow = FormShow
   inherited pnlMain: TPanel
     Height = 182
     Width = 434
@@ -17,35 +18,34 @@ inherited EditConnectionDialog: TEditConnectionDialog
       Left = 10
       Height = 17
       Top = 12
-      Width = 106
-      Caption = 'Connection Name: '
+      Width = 40
+      Caption = 'Name: '
       ParentColor = False
     end
     object edConnName: TEdit[1]
-      Left = 120
+      Left = 85
       Height = 27
       Top = 8
-      Width = 301
+      Width = 336
       Anchors = [akTop, akLeft, akRight]
       TabOrder = 0
       Text = 'edConnName'
     end
     object Label2: TLabel[2]
-      Left = 123
+      Left = 88
       Height = 17
       Top = 49
-      Width = 80
-      Caption = 'Server Name: '
+      Width = 32
+      Caption = 'Host: '
       ParentColor = False
     end
-    object edServerName: TEdit[3]
-      Left = 208
+    object edHost: TEdit[3]
+      Left = 122
       Height = 27
       Top = 44
-      Width = 213
-      Anchors = [akTop, akLeft, akRight]
+      Width = 181
       TabOrder = 2
-      Text = 'edServerName'
+      Text = 'edHost'
     end
     object CkbRemoteServer: TCheckBox[4]
       Left = 8
@@ -53,6 +53,7 @@ inherited EditConnectionDialog: TEditConnectionDialog
       Top = 47
       Width = 66
       Caption = 'Remote'
+      OnChange = CkbRemoteServerChange
       TabOrder = 1
     end
     object Label3: TLabel[5]
@@ -76,7 +77,7 @@ inherited EditConnectionDialog: TEditConnectionDialog
       Anchors = [akTop, akLeft, akRight]
       MaxLength = 0
       Spacing = 1
-      TabOrder = 3
+      TabOrder = 4
       Text = 'edDBName'
     end
     object Label4: TLabel[7]
@@ -92,7 +93,7 @@ inherited EditConnectionDialog: TEditConnectionDialog
       Height = 27
       Top = 116
       Width = 130
-      TabOrder = 4
+      TabOrder = 5
       Text = 'edUserName'
     end
     object Label5: TLabel[9]
@@ -108,7 +109,7 @@ inherited EditConnectionDialog: TEditConnectionDialog
       Height = 27
       Top = 116
       Width = 130
-      TabOrder = 5
+      TabOrder = 6
       Text = 'edPassword'
     end
     object Label6: TLabel[11]
@@ -124,7 +125,7 @@ inherited EditConnectionDialog: TEditConnectionDialog
       Height = 27
       Top = 150
       Width = 130
-      TabOrder = 6
+      TabOrder = 7
       Text = 'edRole'
     end
     object Label7: TLabel[13]
@@ -197,8 +198,24 @@ inherited EditConnectionDialog: TEditConnectionDialog
         'GB18030'
       )
       Style = csDropDownList
-      TabOrder = 7
+      TabOrder = 8
       Text = 'NONE'
+    end
+    object Label8: TLabel[15]
+      Left = 316
+      Height = 17
+      Top = 49
+      Width = 29
+      Caption = 'Port: '
+      ParentColor = False
+    end
+    object sePort: TSpinEdit[16]
+      Left = 349
+      Height = 27
+      Top = 44
+      Width = 72
+      MaxValue = 0
+      TabOrder = 3
     end
   end
   inherited pnlButtons: TPanel
@@ -207,6 +224,7 @@ inherited EditConnectionDialog: TEditConnectionDialog
     ClientWidth = 434
     inherited btnOK: TBitBtn
       Left = 261
+      OnClick = btnOKClick
       TabOrder = 1
     end
     inherited btnCancel: TBitBtn

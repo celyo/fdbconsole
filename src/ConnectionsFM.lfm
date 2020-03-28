@@ -7,7 +7,6 @@ object ConnectionsForm: TConnectionsForm
   Caption = 'ConnectionsForm'
   ClientHeight = 458
   ClientWidth = 245
-  LCLVersion = '2.0.6.0'
   object tvConnections: TTreeView
     Left = 0
     Height = 458
@@ -15,23 +14,28 @@ object ConnectionsForm: TConnectionsForm
     Width = 245
     Align = alClient
     Images = MainDataModule.ImageList
+    ImagesWidth = 16
     PopupMenu = pmConnections
-    RowSelect = True
+    ReadOnly = True
+    RightClickSelect = True
     TabOrder = 0
-    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoRightClickSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
   end
   object pmConnections: TPopupMenu
     Images = MainDataModule.ImageList
     left = 104
     top = 294
-    object miDBRegistrationInfo: TMenuItem
-      Caption = 'Database Registration Info ...'
+    object miNewConnection: TMenuItem
+      Caption = 'New Connection ...'
+      OnClick = miNewConnectionClick
     end
-    object miRegisterDB: TMenuItem
-      Caption = 'Register Database ...'
+    object miEditConnection: TMenuItem
+      Caption = 'Edit Connection ...'
+      OnClick = miEditConnectionClick
     end
-    object miUnregisterDB: TMenuItem
-      Caption = 'Unregister Database'
+    object miRemoveConnectiion: TMenuItem
+      Caption = 'Remove Connection'
+      OnClick = miRemoveConnectiionClick
     end
     object N1: TMenuItem
       Caption = '-'
